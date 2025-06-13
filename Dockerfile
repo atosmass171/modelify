@@ -1,18 +1,18 @@
-# Usa Python 3.10 (ou outro compatível com suas libs)
-FROM python:3.10-slim
+# Escolha a versão de Python compatível (exemplo: 3.11)
+FROM python:3.11-slim
 
-# Define diretório de trabalho
+# Diretório de trabalho
 WORKDIR /app
 
-# Copia os arquivos do seu projeto para o container
-COPY . /app
+# Copie os arquivos
+COPY . .
 
-# Atualiza pip e instala dependências
+# Instale dependências
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Expõe a porta usada pelo Flask
-EXPOSE 5000
+# Expõe a porta (ajuste se usar outra)
+EXPOSE 10000
 
-# Comando para rodar o app
-CMD ["python", "app.py"]
+# Comando para iniciar (ajuste se necessário)
+CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:10000"]
