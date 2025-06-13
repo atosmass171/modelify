@@ -89,7 +89,6 @@ murmurhash==1.0.12
 networkx==2.8.8
 nltk==3.9.1
 num2words==0.5.14
-numba==0.60.0
 numpy==1.22.0
 nvidia-cublas-cu12==12.4.5.8
 nvidia-cuda-cupti-cu12==12.4.127
